@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorkFlow.AutoMapper\WorkFlow.AutoMapper.csproj" />
+    <ProjectReference Include="..\Workflow.Business.Imp\Workflow.Business.Imp.csproj" />
+    <ProjectReference Include="..\WorkFlow.Business\WorkFlow.Business.csproj" />
+    <ProjectReference Include="..\Workflow.Dto\Workflow.Dto.csproj" />
+    <ProjectReference Include="..\WorkFolw.Service\WorkFolw.Service.csproj" />
+  </ItemGroup>
+
+</Project>

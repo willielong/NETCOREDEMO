@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Workflow.Business.Imp\Workflow.Business.Imp.csproj" />
+    <ProjectReference Include="..\WorkFlow.Business\WorkFlow.Business.csproj" />
+    <ProjectReference Include="..\Workflow.Dto\Workflow.Dto.csproj" />
+    <ProjectReference Include="..\Workflow.Entity.Imp\Workflow.Entity.Imp.csproj" />
+    <ProjectReference Include="..\Workflow.Entity\Workflow.Entity.csproj" />
+    <ProjectReference Include="..\Workflow.Repository.Imp\Workflow.Repository.Imp.csproj" />
+    <ProjectReference Include="..\Workflow.Repository\Workflow.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="StackExchange.Redis.StrongName">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\stackexchange.redis.strongname\1.2.4\lib\netstandard1.5\StackExchange.Redis.StrongName.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBHELPER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MS_WRITE_CONNECTION>data source=.;initial catalog=WorkFlowDb1.0;pooling=true;min pool size=5;max pool size=512;connect timeout = 20;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework</MS_WRITE_CONNECTION>
+  <MS_READ_CONNECTION>data source=.;initial catalog=WorkFlowDb1.0;pooling=true;min pool size=5;max pool size=512;connect timeout = 20;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework</MS_READ_CONNECTION>
+  <MY_WRITE_CONNECTION>data source=.;initial catalog=WorkFlowDb1.0;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework</MY_WRITE_CONNECTION>
+  <MY_READ_CONNECTION>data source=.;initial catalog=WorkFlowDb1.0;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework</MY_READ_CONNECTION>
+  <OC_WRITE_CONNECTION>data source=.;initial catalog=WorkFlowDb1.0;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework</OC_WRITE_CONNECTION>
+  <OC_READ_CONNECTION>data source=.;initial catalog=WorkFlowDb1.0;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework</OC_READ_CONNECTION>
+</DBHELPER>
