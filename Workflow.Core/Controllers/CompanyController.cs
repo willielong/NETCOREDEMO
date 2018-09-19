@@ -19,7 +19,7 @@ namespace Workflow.Core.Controllers
         public CompanyController(ICompanyService service)
         {
             ServiceLocator.Ip = "192.168.1.75";
-            ServiceLocator.currentUser = "李文龙";
+            ServiceLocator.currentUser = "Author";
             _service = service;
         }
         [HttpGet, Route("co")]
