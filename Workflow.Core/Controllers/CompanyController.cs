@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Workflow.comm;
 using Workflow.Dto.business.Company;
@@ -12,21 +13,23 @@ using WorkFolw.Service;
 
 namespace Workflow.Core.Controllers
 {
+    [Authorize("CustomAuthorize")]
     [Route("api/[controller]")]
     public class CompanyController : Controller
     {
         private ICompanyService _service;
         public CompanyController(ICompanyService service)
         {
-            ServiceLocator.Ip = "192.168.1.75";
+            ServiceLocator.Ip = "127.0.0.1";
             ServiceLocator.currentUser = "Author";
             _service = service;
         }
         [HttpGet, Route("co")]
-        public List<Dto_Company> GetCo()
+        public IActionResult GetCo()
         {
-           // LogBase<CompanyController>.Error("错误信息01", "GetCo");
-            return _service.Get();
+            // LogBase<CompanyController>.Error("错误信息01", "GetCo");
+            var ss = _service.Get();
+            return new JsonResult(ss) { StatusCode = 200 };
         }
         [HttpGet, Route("single")]
         public Dto_Company Single()
