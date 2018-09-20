@@ -123,9 +123,9 @@ namespace Workflow.Core.Config
                 {
                     Version = "v1",
                     Title = "接口文档",
-                    Description = "RESTful API for TwBusManagement",
+                    Description = "RESTful API for NetCore",
                     TermsOfService = "None",
-                    Contact = new Contact { Name = "Alvin_Su", Email = "asdasdasd@outlook.com", Url = "" }
+                    Contact = new Contact { Name = "", Email = "", Url = "" }
                 });
 
                 //Set the comments path for the swagger json and ui.
@@ -133,7 +133,7 @@ namespace Workflow.Core.Config
                 var xmlPath = Path.Combine(basePath, "ApiDoc.xml");
                 c.IncludeXmlComments(xmlPath);
 
-                //  c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
+                 c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
             });
 
             var builder = new ContainerBuilder();//实例化 AutoFac  容器  

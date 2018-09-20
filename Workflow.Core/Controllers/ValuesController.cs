@@ -17,7 +17,7 @@ namespace Workflow.Core.Controllers
     [Route("api/[controller]/")]
     //AllowAnonymous]
     //[UserInfoFilter]
-    public class ValuesController : Controller
+    public class ValuesController : BaseController
     {
         public ValuesController([FromServices]IMapper mapper)
         {

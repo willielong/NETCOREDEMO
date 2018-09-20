@@ -9,7 +9,7 @@ using Workflow.comm;
 namespace Workflow.Core.Controllers
 {
     [Route("api/LogIn")]
-    public class LogInController : Controller
+    public class LogInController : BaseController
     {
         [HttpPost]
         public IActionResult Post([FromBody]UserModel user)

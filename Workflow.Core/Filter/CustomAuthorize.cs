@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Workflow.comm;
+using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Core.Filter
 {

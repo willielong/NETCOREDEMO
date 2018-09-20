@@ -22,14 +22,7 @@ namespace Workflow.Core.Config
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            ServiceLocator.readContext = new ReadDbContext();
-            ServiceLocator.writeContext = new WriteDbContext();
-            ServiceLocator.writeContext.Database.EnsureCreated();
-        }
-        ~CustomActionFilterAttribute()
-        {
-            ServiceLocator.readContext.Dispose();
-            ServiceLocator.writeContext.Dispose();
+         
         }
     }
 }

@@ -17,7 +17,7 @@ using WorkFolw.Service;
 namespace Workflow.Core.Controllers
 {
     [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/[controller]")]
-    public class CompanyController : Controller
+    public class CompanyController : BaseController
     {
         private ICompanyService _service;
         public CompanyController(ICompanyService service)

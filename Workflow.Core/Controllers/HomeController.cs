@@ -8,7 +8,7 @@ using Workflow.Core.Config;
 namespace Workflow.Core.Controllers
 {
     [CustomActionFilter]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
