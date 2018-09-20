@@ -7,6 +7,7 @@ namespace Workflow.Business.Imp.Company.Behavior
 {
     using Microsoft.EntityFrameworkCore;
     using System.Data.SqlClient;
+    using System.Linq;
     using System.Threading.Tasks;
     using Workflow.comm;
     using Workflow.Entity.Imp;
@@ -57,6 +58,7 @@ namespace Workflow.Business.Imp.Company.Behavior
         {
             return await repository.QueryWhere(o => o.ognId == Id.ToString()).Include("Departments").ToListAsync();
         }
+
         /// <summary>
         /// 获取数据-分页
         /// </summary>
@@ -101,11 +103,13 @@ namespace Workflow.Business.Imp.Company.Behavior
             parameters.Add(new SqlParameter("@ognName", criteria.name));
             return base.Query<TOther>(sb, parameters).Result;
         }
+
         public async Task<object> own()
         {
             //return await repository.All().Include("Departments").ToListAsync();
             return await Task.Run(() => repository.QueryProc("SELECT * FROM dbo.Company"));
         }
+
         /// <summary>
         /// 获取所有数据
         /// </summary>
@@ -115,6 +119,7 @@ namespace Workflow.Business.Imp.Company.Behavior
             return await repository.All().Include("Departments").ToListAsync();
             // return await repository.T_SQL("SELECT * FROM dbo.Company").Include("Departments").ToListAsync();
         }
+
         #endregion
     }
 }

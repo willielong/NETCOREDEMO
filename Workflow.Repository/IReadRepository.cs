@@ -10,6 +10,7 @@
 */
 
 
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -22,6 +23,7 @@ namespace Workflow.Repository
     public interface IReadRepository<TEntity> where TEntity : class
     {
         #region 查询
+
 
         /// <summary>
         /// 使用拉姆达表达式获取单个数据，获取第一条数据
@@ -129,7 +131,7 @@ namespace Workflow.Repository
         object QueryProc(string procSql, SqlParameter[] pamrs = null);
 
 
-           /// <summary>
+        /// <summary>
         /// 分页的进行SQL语句进行数据查询
         /// </summary>
         /// <typeparam name="TResult">返回的类型</typeparam>
@@ -152,5 +154,6 @@ namespace Workflow.Repository
         object Select(string sql, SqlParameter[] pamrs = null);
 
         #endregion
+        
     }
 }

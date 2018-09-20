@@ -44,5 +44,10 @@ namespace Workflow.comm
         /// </summary>
         public DateTime? endTime { get; set; }
 
+        /// <summary>
+        /// 查询数据的主键
+        /// </summary>
+        public object prKey { get; set; }
+
     }
 }
