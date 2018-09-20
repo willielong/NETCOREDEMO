@@ -24,6 +24,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Workflow.comm;
+using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Core
 {
@@ -64,7 +65,7 @@ namespace Workflow.Core
                 app.UseDeveloperExceptionPage();
             }
             ///进行注册
-           // Config.AutoFacConfig.RegisterMappings();
+            // Config.AutoFacConfig.RegisterMappings();
 
 
             //var tokenValidationParameters = new TokenValidationParameters()
@@ -84,6 +85,8 @@ namespace Workflow.Core
             //    AutomaticChallenge = true,
             //    TokenValidationParameters = tokenValidationParameters
             //});
+            //ServiceLocator.readContext = app.ApplicationServices.GetService<ReadDbContext>();
+            //ServiceLocator.writeContext = app.ApplicationServices.GetService<WriteDbContext>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

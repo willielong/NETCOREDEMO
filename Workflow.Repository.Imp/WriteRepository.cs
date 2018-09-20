@@ -23,6 +23,16 @@ namespace Workflow.Repository.Imp
             DbSets = _dbContext.Set<Tentity>();
         }
 
+        /// <summary>
+        /// 无参数进行参数构造
+        /// </summary>
+        /// <param name="_writeDbContext"></param>
+        public WriteRepository() : base()
+        {
+            DbSets = _dbContext.Set<Tentity>();
+        }
+
+
         #region 增删除改
         /// <summary>
         /// 进行数据添加

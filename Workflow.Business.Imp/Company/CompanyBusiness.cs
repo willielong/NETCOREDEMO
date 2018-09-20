@@ -32,30 +32,30 @@ namespace Workflow.Business.Imp.Company
         private WriteBehavior writeBehavior;
         private ReadBehavior readBehavior;
 
-        public CompanyBusiness(WriteDbContext writeContext, ReadDbContext readDbContext) : base(writeContext)
+        //public CompanyBusiness(WriteDbContext writeContext, ReadDbContext readDbContext) : base(writeContext)
+        //{
+        //    ///进行具体方法实现-写入数据
+        //    if (writeBehavior == null)
+        //    {
+        //        writeBehavior = new WriteBehavior();
+        //    }
+        //    ///进行具体方法实现-读取
+        //    if (readBehavior == null)
+        //    {
+        //        readBehavior = new ReadBehavior();
+        //    }
+        //}
+        public CompanyBusiness() : base()
         {
-            ///进行具体方法实现-写入数据
+            // 进行具体方法实现 - 写入数据
             if (writeBehavior == null)
             {
-                writeBehavior = new WriteBehavior(writeContext);
+                writeBehavior = new WriteBehavior();
             }
-            ///进行具体方法实现-读取
+            // 进行具体方法实现 - 读取
             if (readBehavior == null)
             {
-                readBehavior = new ReadBehavior(readDbContext);
-            }
-        }
-        public CompanyBusiness() : base(ServiceLocator.writeContext as WriteDbContext)
-        {
-            ///进行具体方法实现-写入数据
-            if (writeBehavior == null)
-            {
-                writeBehavior = new WriteBehavior(ServiceLocator.writeContext as WriteDbContext);
-            }
-            ///进行具体方法实现-读取
-            if (readBehavior == null)
-            {
-                readBehavior = new ReadBehavior(ServiceLocator.readContext as ReadDbContext);
+                readBehavior = new ReadBehavior();
             }
         }
         #endregion

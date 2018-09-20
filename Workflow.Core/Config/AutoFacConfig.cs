@@ -71,15 +71,15 @@ namespace Workflow.Core.Config
             //services.AddDbContext<ReadDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_read_connection, db => db.UseRowNumberForPaging()));
 
 
-            ///添加写的数据库线程
-            services.AddDbContext<WriteDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_write_connection, db =>
-            {
-                db.UseRowNumberForPaging();
-                //db.MigrationsAssembly("Workflow.Core"); 
-            }));
+            /////添加写的数据库线程
+            //services.AddDbContext<WriteDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_write_connection, db =>
+            //{
+            //    db.UseRowNumberForPaging();
+            //    //db.MigrationsAssembly("Workflow.Core"); 
+            //}));
 
-            /// 添加读的数据库线程
-            services.AddDbContext<ReadDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_read_connection, db => db.UseRowNumberForPaging()));
+            ///// 添加读的数据库线程
+            //services.AddDbContext<ReadDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_read_connection, db => db.UseRowNumberForPaging()));
 
             //var assemblyS = Assembly.Load("Workflow.ServiceImp");
             //var assemblyB = Assembly.Load("WorkFlow.Business.Imp");
@@ -131,11 +131,11 @@ namespace Workflow.Core.Config
             IServiceProvider serviceProvider = new AutofacServiceProvider(ApplicationContainer);
 
             ///进行数据库/表创建
-            serviceProvider.GetService<WriteDbContext>().Database.EnsureCreated();
+           // serviceProvider.GetService<WriteDbContext>().Database.EnsureCreated();
 
             ///手动的将数据库连接对象放入到自己的对象中
-            ServiceLocator.readContext = serviceProvider.GetService<ReadDbContext>();
-            ServiceLocator.writeContext = serviceProvider.GetService<WriteDbContext>();
+            //ServiceLocator.readContext = serviceProvider.GetService<ReadDbContext>();
+            //ServiceLocator.writeContext = serviceProvider.GetService<WriteDbContext>();
             ServiceLocator.mapper = serviceProvider.GetService<IMapper>();
 
             ///注入log4net

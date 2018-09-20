@@ -6,10 +6,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using Workflow.comm;
 
 namespace Workflow.Repository.Imp
 {
-    public class ReadRepository<TEntity>:IReadRepository<TEntity> where TEntity : class
+    public class ReadRepository<TEntity> : IReadRepository<TEntity> where TEntity : class
     { /// <summary>
       /// 数据集
       /// </summary>
@@ -20,13 +21,21 @@ namespace Workflow.Repository.Imp
         /// 进行参数构造
         /// </summary>
         /// <param name="_DbContext"></param>
-        public ReadRepository(DbContext _DbContext) 
+        public ReadRepository(DbContext _DbContext)
         {
             ReadContext = _DbContext;
             DbSets = _DbContext.Set<TEntity>();
         }
 
-
+        /// <summary>
+        /// 进行参数构造
+        /// </summary>
+        /// <param name="_DbContext"></param>
+        public ReadRepository()
+        {
+            ReadContext = ServiceLocator.readContext;
+            DbSets = ReadContext.Set<TEntity>();
+        }
 
         #region 获取单个数据
 
@@ -277,7 +286,6 @@ namespace Workflow.Repository.Imp
             }
             //connection.Dispose();
             return Results.AsQueryable();
-
             //}
         }
 

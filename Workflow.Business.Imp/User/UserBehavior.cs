@@ -23,9 +23,9 @@ namespace Workflow.Business.Imp.User
     using Workflow.Repository;
     using Workflow.Repository.Imp;
 
-    public class UserBehavior : BaseBehavior<User>
+    public class UserBehavior 
     {
-        public UserBehavior(DbContext dbContext) : base(dbContext)
+        public UserBehavior() 
         {
 
         }        

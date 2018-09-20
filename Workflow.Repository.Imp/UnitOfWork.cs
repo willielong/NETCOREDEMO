@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Text;
+using Workflow.comm;
 using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Repository.Imp
@@ -27,6 +28,16 @@ namespace Workflow.Repository.Imp
         public UnitOfWork(WriteDbContext _writeDbContext)
         {
             writeDbContext = _writeDbContext;
+
+        }
+
+        /// <summary>
+        /// 无参数的构造函数
+        /// </summary>
+        /// <param name="_writeDbContext"></param>
+        public UnitOfWork()
+        {
+            writeDbContext = ServiceLocator.writeContext as WriteDbContext;
 
         }
 

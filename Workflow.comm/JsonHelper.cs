@@ -10,6 +10,7 @@
 * **************************************************************************
 */
 
+using Microsoft.AspNetCore.Mvc;
 using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,8 @@ namespace Workflow.comm
         /// <typeparam name="T"></typeparam>
         /// <param name="Json"></param>
         /// <returns></returns>
-        public static T ToEntity<T>(this string Json) {
+        public static T ToEntity<T>(this string Json)
+        {
             return JsonSerializer.DeserializeFromString<T>(Json);
         }
         /// <summary>
@@ -82,6 +84,11 @@ namespace Workflow.comm
         public static string ToJsonString(this object Json)
         {
             return JsonSerializer.SerializeToString(Json);
+        }
+
+        public static JsonResult ToJsonResult(this object data)
+        {
+            return new JsonResult(data);
         }
     }
 }

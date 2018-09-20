@@ -19,6 +19,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using Workflow.comm;
 using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Repository.Imp
@@ -28,7 +29,7 @@ namespace Workflow.Repository.Imp
         /// <summary>
         /// 链接DBContext
         /// </summary>
-        public DbContext _dbContext { get; set; }
+        protected DbContext _dbContext { get; set; }
 
 
         /// <summary>
@@ -38,6 +39,13 @@ namespace Workflow.Repository.Imp
         public BaseRepositiry(DbContext dbContext)
         {
             _dbContext = dbContext;
+        }
+        /// <summary>
+        /// 无参数的构造函数
+        /// </summary>
+        public BaseRepositiry()
+        {
+            _dbContext = ServiceLocator.writeContext;
         }
 
         /// <summary>

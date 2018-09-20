@@ -26,7 +26,7 @@ namespace Workflow.Repository
         /// <summary>
         /// 链接DBContext
         /// </summary>
-         DbContext _dbContext { get; set; }
+         //DbContext _dbContext { get; set; }
 
         #region 增删改
         #region 编辑    

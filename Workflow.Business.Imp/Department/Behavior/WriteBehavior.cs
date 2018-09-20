@@ -14,7 +14,7 @@ namespace Workflow.Business.Imp.Department.Behavior
 
     public class WriteBehavior : WriteBaseBehavior<Department>
     {
-        public WriteBehavior(WriteDbContext dbContext) : base(dbContext)
+        public WriteBehavior() : base()
         {
         }
         #region 操作模块

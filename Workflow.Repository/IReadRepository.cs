@@ -152,7 +152,6 @@ namespace Workflow.Repository
         /// <param name="pamrs"></param>
         /// <returns></returns>
         object Select(string sql, SqlParameter[] pamrs = null);
-
         #endregion
         
     }

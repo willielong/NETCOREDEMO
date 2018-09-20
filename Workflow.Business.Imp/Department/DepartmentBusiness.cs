@@ -29,36 +29,37 @@ namespace Workflow.Business.Imp.Department
         private WriteBehavior writeBehavior;
         private ReadBehavior readBehavior;
 
+        [Obsolete("暂时测试弃用")]
         public DepartmentBusiness(WriteDbContext _writeDbContext, ReadDbContext readDbContext) : base(_writeDbContext)
         {
             ///进行数据库读写分离
             ///进行具体方法实现-写入数据
             if (writeBehavior == null)
             {
-                writeBehavior = new WriteBehavior(_writeDbContext);
+                writeBehavior = new WriteBehavior();
                 //_writeContext = writeContext;
             }
             ///进行具体方法实现-读取
             if (readBehavior == null)
             {
-                readBehavior = new ReadBehavior(readDbContext);
+                readBehavior = new ReadBehavior();
             }
         }
 
         /// <summary>
         /// 无参数的构造函数
         /// </summary>
-        public DepartmentBusiness() : base(ServiceLocator.writeContext as WriteDbContext)
+        public DepartmentBusiness() : base()
         {
             ///进行具体方法实现-写入数据
             if (writeBehavior == null)
             {
-                writeBehavior = new WriteBehavior(ServiceLocator.writeContext as WriteDbContext);
+                writeBehavior = new WriteBehavior();
             }
             ///进行具体方法实现-读取
             if (readBehavior == null)
             {
-                readBehavior = new ReadBehavior(ServiceLocator.readContext as ReadDbContext);
+                readBehavior = new ReadBehavior();
             }
         }
 

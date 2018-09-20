@@ -44,7 +44,15 @@ namespace Workflow.Repository.Imp
             DbSets = _dbContext.Set<Tentity>();
         }
 
-        
+        /// <summary>
+        /// 进行参数构造（无参数构造）
+        /// </summary>
+        /// <param name="_writeDbContext"></param>
+        public Repository() : base()
+        {
+            DbSets = _dbContext.Set<Tentity>();
+        }
+
 
         #region 获取单个数据
 
@@ -206,11 +214,11 @@ namespace Workflow.Repository.Imp
         //    throw new NotImplementedException();
         //}
 
-       
+
         #endregion
 
         #region 执行sql语句模块
-       
+
         /// <summary>
         /// 分页的进行SQL语句进行数据查询
         /// </summary>
@@ -222,7 +230,7 @@ namespace Workflow.Repository.Imp
         /// <param name="size">传入每页显示数量</param>
         /// <param name="pamrs">传入参数</param>
         /// <returns></returns>
-        public virtual object Page(string sql, string orderCloumn,int page = 0, int size = 0, string order = "ASC",  SqlParameter[] pamrs = null)
+        public virtual object Page(string sql, string orderCloumn, int page = 0, int size = 0, string order = "ASC", SqlParameter[] pamrs = null)
         {
 
             StringBuilder sb = new StringBuilder();

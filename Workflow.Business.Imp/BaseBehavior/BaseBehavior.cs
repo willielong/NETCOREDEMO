@@ -11,6 +11,8 @@ using Workflow.Repository.Imp;
 
 namespace Workflow.Business.Imp.BaseBehavior
 {
+
+    [Obsolete("弃用")]
     public class BaseBehavior<T> where T : class, new()
     {
         public readonly IReadRepository<T> readRepository;
@@ -153,9 +155,9 @@ namespace Workflow.Business.Imp.BaseBehavior
     public class ReadBaseBehavior<T> where T : class, new()
     {
         public readonly IReadRepository<T> repository;
-        public ReadBaseBehavior(ReadDbContext dbContext)
+        public ReadBaseBehavior()
         {
-            repository = new ReadRepository<T>(dbContext);
+            repository = new ReadRepository<T>();
 
         }
 
@@ -235,9 +237,9 @@ namespace Workflow.Business.Imp.BaseBehavior
     public class WriteBaseBehavior<T> where T : class, new()
     {
         public readonly IWriteRepository<T> repository;
-        public WriteBaseBehavior(WriteDbContext dbContext)
+        public WriteBaseBehavior()
         {
-            repository = new WriteRepository<T>(dbContext);
+            repository = new WriteRepository<T>();
         }
 
         /// <summary>

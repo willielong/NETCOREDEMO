@@ -15,7 +15,7 @@ namespace Workflow.Business.Imp.Company.Behavior
 
     public class ReadBehavior : ReadBaseBehavior<Company>
     {
-        public ReadBehavior(ReadDbContext dbContext) : base(dbContext)
+        public ReadBehavior() : base()
         {
         }
         #region 查询模块
