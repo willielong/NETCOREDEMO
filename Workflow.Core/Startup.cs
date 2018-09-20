@@ -87,6 +87,13 @@ namespace Workflow.Core
             //});
             //ServiceLocator.readContext = app.ApplicationServices.GetService<ReadDbContext>();
             //ServiceLocator.writeContext = app.ApplicationServices.GetService<WriteDbContext>();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Document API V1");
+            });
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

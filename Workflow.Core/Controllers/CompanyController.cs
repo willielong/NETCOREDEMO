@@ -16,7 +16,7 @@ using WorkFolw.Service;
 
 namespace Workflow.Core.Controllers
 {
-    [ CustomActionFilter, Route("api/[controller]")]
+    [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/[controller]")]
     public class CompanyController : Controller
     {
         private ICompanyService _service;
@@ -26,12 +26,21 @@ namespace Workflow.Core.Controllers
             ServiceLocator.currentUser = "Author";
             _service = service;
         }
+        /// <summary>
+        /// 进行数据加载的接口
+        /// </summary>
+        /// <returns></returns>
         [HttpGet, Route("co")]
         public IActionResult GetCo()
         {
             // LogBase<CompanyController>.Error("错误信息01", "GetCo");
             return _service.Get().ToJsonResult();
         }
+
+        /// <summary>
+        /// 进行单个数据加载
+        /// </summary>
+        /// <returns></returns>
         [HttpGet, Route("single")]
         public IActionResult Single()
         {

@@ -18,11 +18,12 @@ using log4net;
 using log4net.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 //using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,11 +33,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
-using System.Threading.Tasks;
 using Workflow.comm;
 using Workflow.Core.Common;
 using Workflow.Core.Filter;
-using Workflow.Entity.Imp.DataBase;
 using Workflow.Repository;
 using Workflow.Repository.Imp;
 using WorkFlow.AutoMapper;
@@ -114,8 +113,29 @@ namespace Workflow.Core.Config
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
             //注入授权Handler
             services.AddSingleton<IAuthorizationHandler, CustomAuthorize>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "接口文档",
+                    Description = "RESTful API for TwBusManagement",
+                    TermsOfService = "None",
+                    Contact = new Contact { Name = "Alvin_Su", Email = "asdasdasd@outlook.com", Url = "" }
+                });
+
+                //Set the comments path for the swagger json and ui.
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "ApiDoc.xml");
+                c.IncludeXmlComments(xmlPath);
+
+                //  c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
+            });
+
             var builder = new ContainerBuilder();//实例化 AutoFac  容器  
 
             //GetAssmenBlys();
