@@ -8,7 +8,9 @@ using Workflow.comm;
 
 namespace Workflow.Core.Controllers
 {
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]"),Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [ApiVersion("3.0")]
     public class LogInController : BaseController
     {
         [HttpPost]

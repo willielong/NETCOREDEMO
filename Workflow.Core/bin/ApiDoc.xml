@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Workflow.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.GetAssmenBlys">
+            <summary>
+            返回需要依赖注入的接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.GetDbBaseConnection">
+            <summary>
+            读取配置文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.RegisterMappings">
+            <summary>
+            进行数据映射的三方插件引入
+            </summary>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.GetTokenHelper">
+            <summary>
+            获取生成Token的配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Workflow.Core.Filter.CustomAuthorize.Schemes">
+            <summary>
+            验证方案提供对象
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Filter.CustomAauthorizeRequirement.ClaimType">
+            <summary>
+            认证授权类型
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Filter.CustomAauthorizeRequirement.Issuer">
+            <summary>
+            发行人
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Filter.CustomAauthorizeRequirement.Audience">
+            <summary>
+            订阅人
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Filter.CustomAauthorizeRequirement.Expiration">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Filter.CustomAauthorizeRequirement.SigningCredentials">
+            <summary>
+            签名验证
+            </summary>
+        </member>
+    </members>
+</doc>

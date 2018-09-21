@@ -52,6 +52,7 @@ namespace Workflow.Core.Filter
                 //result?.Principal不为空即登录成功
                 if (result?.Principal != null)
                 {
+                    ServiceLocator.currentUser = result.Principal.Identity.Name;
                     //httpContext.User = result.Principal;
                     ////权限中是否存在请求的url
                     //if (Requirement.Permissions.GroupBy(g => g.Url).Where(w => w.Key.ToLower() == questUrl).Count() > 0)

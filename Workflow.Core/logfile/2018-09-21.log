@@ -1,0 +1,5 @@
+日志时间: 2018-09-21 09:27:04,554;线程ID:[22];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;
+日志时间: 2018-09-21 09:39:55,432;线程ID:[24];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;
+日志时间: 2018-09-21 09:40:29,151;线程ID:[23];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;
+日志时间: 2018-09-21 14:14:28,023;线程ID:[6];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;
+日志时间: 2018-09-21 14:16:29,425;线程ID:[20];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;

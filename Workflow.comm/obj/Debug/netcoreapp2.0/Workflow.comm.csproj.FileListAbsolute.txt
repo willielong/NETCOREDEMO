@@ -1,0 +1,9 @@
+E:\项目\core\Workflow.comm\bin\Debug\netcoreapp2.0\Workflow.comm.deps.json
+E:\项目\core\Workflow.comm\bin\Debug\netcoreapp2.0\Workflow.comm.dll
+E:\项目\core\Workflow.comm\bin\Debug\netcoreapp2.0\Workflow.comm.pdb
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.csproj.CoreCompileInputs.cache
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.AssemblyInfoInputs.cache
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.AssemblyInfo.cs
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.dll
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.pdb
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.csprojAssemblyReference.cache

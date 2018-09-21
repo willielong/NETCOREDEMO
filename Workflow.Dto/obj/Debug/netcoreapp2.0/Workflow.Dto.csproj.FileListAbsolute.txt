@@ -1,0 +1,16 @@
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Dto.deps.json
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Dto.dll
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Dto.pdb
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.comm.dll
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Entity.dll
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Entity.Imp.dll
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.comm.pdb
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Entity.Imp.pdb
+E:\项目\core\Workflow.Dto\bin\Debug\netcoreapp2.0\Workflow.Entity.pdb
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.csprojAssemblyReference.cache
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.csproj.CoreCompileInputs.cache
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.AssemblyInfoInputs.cache
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.AssemblyInfo.cs
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.csproj.CopyComplete
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.dll
+E:\项目\core\Workflow.Dto\obj\Debug\netcoreapp2.0\Workflow.Dto.pdb

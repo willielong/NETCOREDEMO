@@ -115,7 +115,7 @@ namespace Workflow.comm
             var response = new AccessToken
             {
                 access_token = encodedJwt,
-                expires_in = (TimeSpan.FromSeconds(double.Parse(ServiceLocator.tokenHelper.Expiration))).Seconds
+                expires_in = (int)(TimeSpan.FromSeconds(double.Parse(ServiceLocator.tokenHelper.Expiration))).TotalSeconds
             };
             return response;
         }

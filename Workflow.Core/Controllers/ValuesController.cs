@@ -14,7 +14,9 @@ using Workflow.Core.Filter;
 namespace Workflow.Core.Controllers
 {
     [Authorize("CustomAuthorize")]
-    [Route("api/[controller]/")]
+    [Route("api/v{version:apiVersion}/[controller]"), Route("api/[controller]/")]
+    [ApiVersion("1.0")]
+    [ApiVersion("3.0")]
     //AllowAnonymous]
     //[UserInfoFilter]
     public class ValuesController : BaseController

@@ -15,5 +15,10 @@ namespace Workflow.Core.Controllers
             ServiceLocator.writeContext = new WriteDbContext();
             ServiceLocator.writeContext.Database.EnsureCreated();
         }
+        ~BaseController()
+        {
+            ServiceLocator.readContext.Dispose();
+            ServiceLocator.writeContext.Dispose();
+        }
     }
 }

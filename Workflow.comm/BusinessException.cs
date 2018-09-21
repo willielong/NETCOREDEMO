@@ -39,7 +39,7 @@ namespace Workflow.comm
             }
         }
         private string _data;
-        public  string data
+        public string data
         {
             get
             {
@@ -307,5 +307,54 @@ namespace Workflow.comm
         }
 
         #endregion
+    }
+
+    public class BusinessException : Exception
+    {
+        private string _code;
+        public string Code
+        {
+            get
+            {
+                return _code;
+            }
+        }
+
+        private string _message;
+        public override string Message
+        {
+            get
+            {
+                return _message;
+            }
+        }
+        private string _data;
+        public string data
+        {
+            get
+            {
+                return _data;
+            }
+        }
+
+        public BusinessException(string message)
+            : base(message)
+        {
+            _message = message;
+        }
+
+        public BusinessException(string code, string message)
+            : base("[" + code + "]" + message)
+        {
+            _code = code;
+            _message = message;
+        }
+        public BusinessException(string code, string message, string data)
+            : base("[" + code + "]" + "[" + message + "]" + data)
+        {
+            _code = code;
+            _message = message;
+            _data = data;
+        }
     }
 }
