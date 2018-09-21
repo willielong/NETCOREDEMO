@@ -16,7 +16,12 @@ using WorkFolw.Service;
 
 namespace Workflow.Core.Controllers
 {
-    [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/[controller]")]
+    /// <summary>
+    /// 获取单位的单元
+    /// </summary>
+    [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/v{version:apiVersion}/[controller]"),Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [ApiVersion("3.0")]
     public class CompanyController : BaseController
     {
         private ICompanyService _service;

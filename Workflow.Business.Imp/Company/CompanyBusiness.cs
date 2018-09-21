@@ -192,7 +192,8 @@ namespace Workflow.Business.Imp.Company
                 var da = readBehavior.own().Result;
                 var ss = readBehavior.All().Result;
                 Company company = readBehavior.Single("01").Result;
-                company.c_head = "lijian";
+                if (company != null)
+                    company.c_head = "lijian";
 
                 writeBehavior.Update(company);
                 ///进行事务提交并写入数据

@@ -18,6 +18,7 @@ using log4net;
 using log4net.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 //using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
@@ -91,9 +92,10 @@ namespace Workflow.Core.Config
             var skey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(ServiceLocator.tokenHelper.TokenSecreKey));
             var signingCredentials = new SigningCredentials(skey, SecurityAlgorithms.HmacSha256);
 
-            services.AddAuthorization(opt=> {
-                var permissionRequirement = new CustomAauthorizeRequirement(ClaimTypes.Role,signingCredentials);
-                opt.AddPolicy("CustomAuthorize", policy =>policy.Requirements.Add(permissionRequirement));
+            services.AddAuthorization(opt =>
+            {
+                var permissionRequirement = new CustomAauthorizeRequirement(ClaimTypes.Role, signingCredentials);
+                opt.AddPolicy("CustomAuthorize", policy => policy.Requirements.Add(permissionRequirement));
             }).AddAuthentication(option =>
             {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -104,7 +106,7 @@ namespace Workflow.Core.Config
                 jwtOptions.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey =skey,
+                    IssuerSigningKey = skey,
                     ValidateIssuer = true,
                     ValidIssuer = ServiceLocator.tokenHelper.Issuer,
                     ValidateAudience = true,
@@ -117,6 +119,7 @@ namespace Workflow.Core.Config
             //注入授权Handler
             services.AddSingleton<IAuthorizationHandler, CustomAuthorize>();
 
+            ////添加接口文档自动生成第三方键
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info
@@ -133,7 +136,16 @@ namespace Workflow.Core.Config
                 var xmlPath = Path.Combine(basePath, "ApiDoc.xml");
                 c.IncludeXmlComments(xmlPath);
 
-                 c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
+                c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
+            });
+
+            ///添加接口版本管理中间件
+            services.AddApiVersioning(opt =>
+            {
+                opt.ReportApiVersions = true;
+                opt.ApiVersionReader = new QueryStringApiVersionReader(parameterName: "version");
+                opt.AssumeDefaultVersionWhenUnspecified = true;
+                opt.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
             });
 
             var builder = new ContainerBuilder();//实例化 AutoFac  容器  
