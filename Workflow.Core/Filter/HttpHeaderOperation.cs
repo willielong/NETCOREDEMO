@@ -12,7 +12,7 @@ namespace Workflow.Core.Filter
     {
         public void Apply(Operation operation, OperationFilterContext context)
         {
-            if(operation.Parameters == null)
+            if (operation.Parameters == null)
             {
                 operation.Parameters = new List<IParameter>();
             }

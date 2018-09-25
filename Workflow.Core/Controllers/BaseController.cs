@@ -10,10 +10,13 @@ namespace Workflow.Core.Controllers
 {
     public class BaseController : Controller
     {
-        public BaseController() {
-            ServiceLocator.readContext = new ReadDbContext();
-            ServiceLocator.writeContext = new WriteDbContext();
-            ServiceLocator.writeContext.Database.EnsureCreated();
+        
+        public BaseController()
+        {
+            //var ss = HttpContext.User.Identity.Name;
+            //ServiceLocator.readContext = new ReadDbContext();
+            //ServiceLocator.writeContext = new WriteDbContext();
+            //ServiceLocator.writeContext.Database.EnsureCreated();
         }
         ~BaseController()
         {

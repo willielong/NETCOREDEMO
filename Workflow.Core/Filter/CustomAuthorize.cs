@@ -53,7 +53,7 @@ namespace Workflow.Core.Filter
                 if (result?.Principal != null)
                 {
                     ServiceLocator.currentUser = result.Principal.Identity.Name;
-                    //httpContext.User = result.Principal;
+                    httpContext.User = result.Principal;
                     ////权限中是否存在请求的url
                     //if (Requirement.Permissions.GroupBy(g => g.Url).Where(w => w.Key.ToLower() == questUrl).Count() > 0)
                     //{

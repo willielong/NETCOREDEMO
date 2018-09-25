@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Workflow.comm;
@@ -19,7 +20,7 @@ namespace Workflow.Core.Controllers
     /// <summary>
     /// 获取单位的单元
     /// </summary>
-    [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/v{version:apiVersion}/[controller]"),Route("api/[controller]")]
+    [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/v{version:apiVersion}/[controller]"), Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiVersion("3.0")]
     public class CompanyController : BaseController

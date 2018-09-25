@@ -4,3 +4,5 @@
 日志时间: 2018-09-25 16:03:21,261;线程ID:[5];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
 ��־ʱ��: 2018-09-25 16:22:01,656;�߳�ID:[23];��־����:ERROR;��־��Ϣ������:Workflow.ServiceImp.CompayServie;��ǰ�ͻ���Ip��ַ:[127.0.0.1];��ǰ�û�:[Author];���ִ���ķ���:Single;������Ϣ:������Ϣ01;
 日志时间: 2018-09-25 16:34:44,423;线程ID:[19];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2018-09-25 17:55:55,484;线程ID:[19];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2018-09-25 18:11:13,022;线程ID:[18];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;

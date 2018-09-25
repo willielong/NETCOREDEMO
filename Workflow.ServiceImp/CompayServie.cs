@@ -10,6 +10,7 @@ using Workflow.Entity.Imp.DataBase;
 using Microsoft.Extensions.DependencyInjection;
 using WorkFlow.Business.Company;
 using Workflow.comm;
+using Workflow.Dto.sys;
 
 namespace Workflow.ServiceImp
 {
@@ -45,12 +46,12 @@ namespace Workflow.ServiceImp
         /// 获取单个数据
         /// </summary>
         /// <returns></returns>
-        public Dto_Company Single()
+        public IResponseMessage Single()
         {
             Error("错误信息01", "Single");
             Dto_Company co;
             business.Single().ToDto(out co, mapper);
-            return co;
+            return co.ToResponse();
         }
     }
 }
