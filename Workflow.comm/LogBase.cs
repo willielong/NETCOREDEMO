@@ -16,7 +16,7 @@ namespace Workflow.comm
     public class LogBase<T> where T : class
     {
         //private ILog _Log;
-        public static ILog Log { get { return LogManager.GetLogger(ServiceLocator.log4netRepository.Name, typeof(T)); } }
+        public static ILog Log { get { return LogManager.GetLogger(ServiceLocator.log4netRepositoryName, typeof(T)); } }
 
         /// <summary>
         /// 错误日志
@@ -141,12 +141,12 @@ namespace Workflow.comm
                 WriteDictionary(writer, loggingEvent.Repository, loggingEvent.GetProperties());
             }
         }
+
         /// <summary>
         /// 通过反射获取传入的日志对象的某个属性的值
         /// </summary>
         /// <param name="property"></param>
         /// <returns></returns>
-
         private object LookupProperty(string property, log4net.Core.LoggingEvent loggingEvent)
         {
             object propertyValue = string.Empty;

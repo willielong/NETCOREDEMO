@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Workflow.Core",
+    "\\Workflow.Core\\Config"
   ],
   "SelectedNode": "\\WorkFlow1.0.sln",
   "PreviewInSolutionExplorer": false

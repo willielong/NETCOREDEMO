@@ -53,5 +53,7 @@ namespace Workflow.comm
         public static string currentUser { get; set; }
 
         public static TokenHelper tokenHelper { get; set; }
+
+        public static string log4netRepositoryName { get; set; } = "NETCoreRepository";
     }
 }

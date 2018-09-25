@@ -18,10 +18,12 @@ using log4net;
 using log4net.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 //using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
@@ -118,7 +120,9 @@ namespace Workflow.Core.Config
 
             //注入授权Handler
             services.AddSingleton<IAuthorizationHandler, CustomAuthorize>();
-
+            //services.AddSession();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             ////添加接口文档自动生成第三方键
             services.AddSwaggerGen(c =>
             {
@@ -138,7 +142,7 @@ namespace Workflow.Core.Config
 
                 c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
             });
-
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             ///添加接口版本管理中间件
             services.AddApiVersioning(opt =>
             {
@@ -163,16 +167,15 @@ namespace Workflow.Core.Config
             IServiceProvider serviceProvider = new AutofacServiceProvider(ApplicationContainer);
 
             ///进行数据库/表创建
-           // serviceProvider.GetService<WriteDbContext>().Database.EnsureCreated();
+            // serviceProvider.GetService<WriteDbContext>().Database.EnsureCreated();
 
             ///手动的将数据库连接对象放入到自己的对象中
             //ServiceLocator.readContext = serviceProvider.GetService<ReadDbContext>();
             //ServiceLocator.writeContext = serviceProvider.GetService<WriteDbContext>();
             ServiceLocator.mapper = serviceProvider.GetService<IMapper>();
-
+            //new SerssionHelper().WriteMapper(mapper);
             ///注入log4net
-            var repository = LogManager.CreateRepository("NETCoreRepository");
-            ServiceLocator.log4netRepository = repository;
+            var repository = LogManager.CreateRepository(ServiceLocator.log4netRepositoryName);
             XmlConfigurator.Configure(repository, new FileInfo("Config\\log4net.config"));
             return serviceProvider;//第三方IOC接管 core内置DI容器  
         }

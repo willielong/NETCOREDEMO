@@ -309,7 +309,7 @@ namespace Workflow.comm
         #endregion
     }
 
-    public class BusinessException : Exception
+    public class FailException : Exception
     {
         private string _code;
         public string Code
@@ -337,19 +337,19 @@ namespace Workflow.comm
             }
         }
 
-        public BusinessException(string message)
+        public FailException(string message)
             : base(message)
         {
             _message = message;
         }
 
-        public BusinessException(string code, string message)
+        public FailException(string code, string message)
             : base("[" + code + "]" + message)
         {
             _code = code;
             _message = message;
         }
-        public BusinessException(string code, string message, string data)
+        public FailException(string code, string message, string data)
             : base("[" + code + "]" + "[" + message + "]" + data)
         {
             _code = code;

@@ -59,7 +59,7 @@ namespace Workflow.Core
                 builder.AllowAnyOrigin();
             });
             app.UseAuthentication();//配置授权
-
+            app.UseSession();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
