@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Workflow.comm;
+using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Repository.Imp
 {
@@ -15,13 +16,13 @@ namespace Workflow.Repository.Imp
       /// 数据集
       /// </summary>
         public virtual DbSet<TEntity> DbSets { get; set; }
-        private DbContext ReadContext { get; set; }
+        private ReadDbContext ReadContext { get; set; }
 
         /// <summary>
         /// 进行参数构造
         /// </summary>
         /// <param name="_DbContext"></param>
-        public ReadRepository(DbContext _DbContext)
+        public ReadRepository(ReadDbContext _DbContext)
         {
             ReadContext = _DbContext;
             DbSets = _DbContext.Set<TEntity>();
@@ -33,17 +34,17 @@ namespace Workflow.Repository.Imp
         /// <param name="_DbContext"></param>
         public ReadRepository()
         {
-            ReadContext = ServiceLocator.readContext;
+            ReadContext = new ReadDbContext();
             DbSets = ReadContext.Set<TEntity>();
         }
 
-        #region 获取单个数据
+            #region 获取单个数据
 
-        /// <summary>
-        /// 根据表达式进行数据查询
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns></returns>
+            /// <summary>
+            /// 根据表达式进行数据查询
+            /// </summary>
+            /// <param name="predicate"></param>
+            /// <returns></returns>
         public virtual IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
         {
             return DbSets.Where(predicate);

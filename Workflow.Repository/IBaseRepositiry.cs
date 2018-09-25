@@ -20,7 +20,7 @@ using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Repository
 {
-    public interface IBaseRepositiry
+    public interface IBaseRepositiry:IUnitOfWork
     {
 
         /// <summary>

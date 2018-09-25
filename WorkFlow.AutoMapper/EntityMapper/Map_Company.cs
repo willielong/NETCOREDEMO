@@ -10,19 +10,19 @@ namespace WorkFlow.AutoMapper.EntityMapper
 {
     public static class Map_Company
     {
-        public static void ToDtoList(this List<Company> buModel,out List<Dto_Company> data)
+        public static void ToDtoList(this List<Company> buModel, out List<Dto_Company> data, IMapper mapper)
         {
-             data = ServiceLocator.mapper.Map<List<Company>, List<Dto_Company>>(buModel);           
+            data = mapper.Map<List<Company>, List<Dto_Company>>(buModel);
         }
-        public static void ToDto(this Company buModel, out Dto_Company data)
+        public static void ToDto(this Company buModel, out Dto_Company data, IMapper mapper)
         {
             //new CommProfile();
-             data = ServiceLocator.mapper.Map<Dto_Company>(buModel);
+            data = mapper.Map<Dto_Company>(buModel);
         }
 
-        public static void ToDtos(this List<Company> buModel, out List<Dto_Company> dtos)
+        public static void ToDtos(this List<Company> buModel, out List<Dto_Company> dtos, IMapper mapper)
         {
-            dtos = ServiceLocator.mapper.Map<List<Company>, List<Dto_Company>>(buModel);
+            dtos = mapper.Map<List<Company>, List<Dto_Company>>(buModel);
         }
     }
 }

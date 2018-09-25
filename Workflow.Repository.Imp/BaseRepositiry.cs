@@ -24,7 +24,7 @@ using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Repository.Imp
 {
-    public class BaseRepositiry : IBaseRepositiry
+    public class BaseRepositiry :UnitOfWork,IBaseRepositiry
     {
         /// <summary>
         /// 链接DBContext
@@ -36,16 +36,16 @@ namespace Workflow.Repository.Imp
         /// 进行构造
         /// </summary>
         /// <param name="dbContext"></param>
-        public BaseRepositiry(DbContext dbContext)
+        public BaseRepositiry(WriteDbContext dbContext):base(dbContext)
         {
             _dbContext = dbContext;
         }
         /// <summary>
         /// 无参数的构造函数
         /// </summary>
-        public BaseRepositiry()
+        public BaseRepositiry() : base()
         {
-            _dbContext = ServiceLocator.writeContext;
+            _dbContext = new WriteDbContext();
         }
 
         /// <summary>

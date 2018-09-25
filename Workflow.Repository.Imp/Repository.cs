@@ -39,7 +39,7 @@ namespace Workflow.Repository.Imp
         /// 进行参数构造
         /// </summary>
         /// <param name="_writeDbContext"></param>
-        public Repository(DbContext _DbContext) : base(_DbContext)
+        public Repository(WriteDbContext _DbContext) : base(_DbContext)
         {
             DbSets = _dbContext.Set<Tentity>();
         }
@@ -48,10 +48,10 @@ namespace Workflow.Repository.Imp
         /// 进行参数构造（无参数构造）
         /// </summary>
         /// <param name="_writeDbContext"></param>
-        public Repository() : base()
-        {
-            DbSets = _dbContext.Set<Tentity>();
-        }
+        //public Repository() : base()
+        //{
+        //    DbSets = _dbContext.Set<Tentity>();
+        //}
 
 
         #region 获取单个数据

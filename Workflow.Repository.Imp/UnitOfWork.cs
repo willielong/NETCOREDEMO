@@ -11,6 +11,7 @@
 */
 
 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace Workflow.Repository.Imp
         /// <param name="_writeDbContext"></param>
         public UnitOfWork()
         {
-            writeDbContext = ServiceLocator.writeContext as WriteDbContext;
+            writeDbContext = new WriteDbContext();
 
         }
 
@@ -65,8 +66,8 @@ namespace Workflow.Repository.Imp
         /// </summary>
         public virtual void EndTransaction()
         {
-           
-           
+
+
         }
 
         /// <summary>

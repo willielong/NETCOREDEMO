@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using Workflow.Entity.Imp.DataBase;
 
 namespace Workflow.Repository.Imp
 {
@@ -18,7 +19,7 @@ namespace Workflow.Repository.Imp
         /// 进行参数构造
         /// </summary>
         /// <param name="_writeDbContext"></param>
-        public WriteRepository(DbContext _DbContext) : base(_DbContext)
+        public WriteRepository(WriteDbContext _DbContext) : base(_DbContext)
         {
             DbSets = _dbContext.Set<Tentity>();
         }

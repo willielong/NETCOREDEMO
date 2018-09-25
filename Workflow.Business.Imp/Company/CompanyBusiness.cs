@@ -26,26 +26,28 @@ namespace Workflow.Business.Imp.Company
     using Workflow.Entity.Imp;
     using Workflow.Repository.Imp;
 
-    public class CompanyBusiness : UnitOfWork, ICompanyBusiness
+    public class CompanyBusiness : ICompanyBusiness
     {
         #region 进行函数构造
         private WriteBehavior writeBehavior;
         private ReadBehavior readBehavior;
+        private IWriteRepository<Company> _writeRepository;
 
-        //public CompanyBusiness(WriteDbContext writeContext, ReadDbContext readDbContext) : base(writeContext)
-        //{
-        //    ///进行具体方法实现-写入数据
-        //    if (writeBehavior == null)
-        //    {
-        //        writeBehavior = new WriteBehavior();
-        //    }
-        //    ///进行具体方法实现-读取
-        //    if (readBehavior == null)
-        //    {
-        //        readBehavior = new ReadBehavior();
-        //    }
-        //}
-        public CompanyBusiness() : base()
+        public CompanyBusiness(IWriteRepository<Company> writeRepository, IReadRepository<Company> readRepository)
+        {
+            ///进行具体方法实现-写入数据
+            if (writeBehavior == null)
+            {
+                _writeRepository = writeRepository;
+                writeBehavior = new WriteBehavior(writeRepository);
+            }
+            ///进行具体方法实现-读取
+            if (readBehavior == null)
+            {
+                readBehavior = new ReadBehavior(readRepository);
+            }
+        }
+        public CompanyBusiness()
         {
             // 进行具体方法实现 - 写入数据
             if (writeBehavior == null)
@@ -69,7 +71,7 @@ namespace Workflow.Business.Imp.Company
         {
             data.ognId = Guid.NewGuid().ToString();
             writeBehavior.Add(data);
-            SaverChanges();
+            _writeRepository.SaverChanges();
             return data.ognId;
         }
 
@@ -82,17 +84,17 @@ namespace Workflow.Business.Imp.Company
         {
             try
             {
-                BeginTransaction();
+                _writeRepository.BeginTransaction();
                 if (criteria is string)
                     writeBehavior.LogicalDelete(criteria);
                 else
                     writeBehavior.LogicalDelete(criteria as string[]);
-                CommitTransaction();
+                _writeRepository.CommitTransaction();
                 return true;
             }
             catch (Exception)
             {
-                RollbackTransaction();
+                _writeRepository.RollbackTransaction();
                 throw;
             }
         }
@@ -107,17 +109,17 @@ namespace Workflow.Business.Imp.Company
         {
             try
             {
-                BeginTransaction();
+                _writeRepository.BeginTransaction();
                 if (criteria is string)
                     writeBehavior.PhysicalDelete(criteria);
                 else
                     writeBehavior.PhysicalDelete(criteria as string[]);
-                CommitTransaction();
+                _writeRepository.CommitTransaction();
                 return true;
             }
             catch (Exception)
             {
-                RollbackTransaction();
+                _writeRepository.RollbackTransaction();
                 throw;
             }
         }
@@ -130,15 +132,15 @@ namespace Workflow.Business.Imp.Company
         {
             try
             {
-                BeginTransaction();
+                _writeRepository.BeginTransaction();
                 data.modifierDate = DateTime.Now;
                 writeBehavior.Update(data);
-                CommitTransaction();
+                _writeRepository.CommitTransaction();
                 return true;
             }
             catch (Exception)
             {
-                RollbackTransaction();
+                _writeRepository.RollbackTransaction();
                 throw;
             }
         }
@@ -185,7 +187,7 @@ namespace Workflow.Business.Imp.Company
         {
             try
             {
-                BeginTransaction();
+
                 var data = readBehavior.Page<Company>(new QueryCriteria() { name = "龙", page = 0, size = 10 });
                 ///打开事务              
 
@@ -193,16 +195,19 @@ namespace Workflow.Business.Imp.Company
                 var ss = readBehavior.All().Result;
                 Company company = readBehavior.Single("01").Result;
                 if (company != null)
+                {
+                    _writeRepository.BeginTransaction();
                     company.c_head = "lijian";
 
-                writeBehavior.Update(company);
-                ///进行事务提交并写入数据
-                CommitTransaction();
+                    writeBehavior.Update(company);
+                    ///进行事务提交并写入数据
+                    _writeRepository.CommitTransaction();
+                }
                 return company;
             }
             catch (Exception)
             {
-                RollbackTransaction();
+                _writeRepository.RollbackTransaction();
                 throw;
             }
 

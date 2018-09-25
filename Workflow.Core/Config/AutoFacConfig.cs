@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 //using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,7 @@ using System.Text.Unicode;
 using Workflow.comm;
 using Workflow.Core.Common;
 using Workflow.Core.Filter;
+using Workflow.Entity.Imp.DataBase;
 using Workflow.Repository;
 using Workflow.Repository.Imp;
 using WorkFlow.AutoMapper;
@@ -73,15 +75,15 @@ namespace Workflow.Core.Config
             //services.AddDbContext<ReadDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_read_connection, db => db.UseRowNumberForPaging()));
 
 
-            /////添加写的数据库线程
-            //services.AddDbContext<WriteDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_write_connection, db =>
-            //{
-            //    db.UseRowNumberForPaging();
-            //    //db.MigrationsAssembly("Workflow.Core"); 
-            //}));
+            ///添加写的数据库线程
+            services.AddDbContext<WriteDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_write_connection, db =>
+            {
+                db.UseRowNumberForPaging();
+                //db.MigrationsAssembly("Workflow.Core"); 
+            }));
 
-            ///// 添加读的数据库线程
-            //services.AddDbContext<ReadDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_read_connection, db => db.UseRowNumberForPaging()));
+            /// 添加读的数据库线程
+            services.AddDbContext<ReadDbContext>(dboptions => dboptions.UseSqlServer(dbConnection.ms_read_connection, db => db.UseRowNumberForPaging()));
 
             //var assemblyS = Assembly.Load("Workflow.ServiceImp");
             //var assemblyB = Assembly.Load("WorkFlow.Business.Imp");
@@ -162,7 +164,10 @@ namespace Workflow.Core.Config
             builder.Populate(services);
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>))//单个注入
     .InstancePerDependency();
-
+            builder.RegisterGeneric(typeof(WriteRepository<>)).As(typeof(IWriteRepository<>))//单个注入
+    .InstancePerDependency();
+            builder.RegisterGeneric(typeof(ReadRepository<>)).As(typeof(IReadRepository<>))//单个注入
+  .InstancePerDependency();
             IContainer ApplicationContainer = builder.Build();
             IServiceProvider serviceProvider = new AutofacServiceProvider(ApplicationContainer);
 

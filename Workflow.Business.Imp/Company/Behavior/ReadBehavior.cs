@@ -12,10 +12,15 @@ namespace Workflow.Business.Imp.Company.Behavior
     using Workflow.comm;
     using Workflow.Entity.Imp;
     using Workflow.Entity.Imp.DataBase;
+    using Workflow.Repository;
 
     public class ReadBehavior : ReadBaseBehavior<Company>
     {
         public ReadBehavior() : base()
+        {
+            
+        }
+        public ReadBehavior(IReadRepository<Company> readRepository) : base(readRepository)
         {
         }
         #region 查询模块

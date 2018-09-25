@@ -11,10 +11,14 @@ namespace Workflow.Business.Imp.Company.Behavior
     using Workflow.comm;
     using Workflow.Entity.Imp;
     using Workflow.Entity.Imp.DataBase;
+    using Workflow.Repository;
 
     public class WriteBehavior : WriteBaseBehavior<Company>
     {
         public WriteBehavior() : base()
+        {
+        }
+        public WriteBehavior(IWriteRepository<Company> writeRepository) : base(writeRepository)
         {
         }
         #region 操作模块
