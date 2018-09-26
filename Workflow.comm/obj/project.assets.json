@@ -5022,6 +5022,16 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "Workflow.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Workflow.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Workflow.Entity.dll": {}
+        }
       }
     }
   },
@@ -13253,6 +13263,11 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "Workflow.Entity/1.0.0": {
+      "type": "project",
+      "path": "../Workflow.Entity/Workflow.Entity.csproj",
+      "msbuildProject": "../Workflow.Entity/Workflow.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13262,6 +13277,7 @@
       "Microsoft.AspNetCore.Session >= 2.1.1",
       "Microsoft.NETCore.App >= 2.0.0",
       "ServiceStack.Text >= 5.0.2",
+      "Workflow.Entity >= 1.0.0",
       "log4net >= 2.0.8"
     ]
   },
@@ -13294,7 +13310,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\项目\\core\\Workflow.Entity\\Workflow.Entity.csproj": {
+              "projectPath": "E:\\项目\\core\\Workflow.Entity\\Workflow.Entity.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

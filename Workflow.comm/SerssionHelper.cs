@@ -7,36 +7,31 @@ using ServiceStack.Text;
 using Microsoft.AspNetCore.Http.Abstractions;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Http.Features;
+using Workflow.Entity;
 
-  namespace Workflow.comm
+namespace Workflow.comm
 {
-    public class SerssionHelper
+    public static class SerssionHelper
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private ISession _session { get; set; }
 
-        public SerssionHelper()
-        {
-            _httpContextAccessor = new HttpContextAccessor();
-            _session = _httpContextAccessor.HttpContext.Session;
-        }
 
         /// <summary>
-        /// 将Mapper 写入到session
+        /// 将用户信息 写入到session
         /// </summary>
         /// <param name="mapper"></param>
-        public void WriteMapper(IMapper mapper)
+        public static void WriteUserSession(this IHttpContextAccessor httpContextAccessor, IUser user)
         {
-            _session.SetString("Mapper", JsonSerializer.SerializeToString<IMapper>(mapper));
+            httpContextAccessor.HttpContext.Session.SetString("4A40B671-51EA-47B3-80CC-DD2426FB8DC2", JsonSerializer.SerializeToString<IUser>(user));
         }
 
         /// <summary>
-        /// 获取Mapper
+        /// 获取用户信息
         /// </summary>
         /// <returns></returns>
-        public IMapper GetMapper()
+        public static IUser GetUserSession(this IHttpContextAccessor httpContextAccessor)
         {
-            return JsonSerializer.DeserializeFromString<IMapper>(_session.GetString("Mapper"));
+            return JsonSerializer.DeserializeFromString<IUser>(httpContextAccessor.HttpContext.Session.GetString("4A40B671-51EA-47B3-80CC-DD2426FB8DC2"));
         }
     }
+
 }

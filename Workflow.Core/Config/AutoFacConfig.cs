@@ -124,7 +124,11 @@ namespace Workflow.Core.Config
             services.AddSingleton<IAuthorizationHandler, CustomAuthorize>();
             //services.AddSession();
             services.AddDistributedMemoryCache();
-            services.AddSession();
+            services.AddSession(opt =>
+            {
+                opt.IdleTimeout = TimeSpan.FromMinutes(5);
+                opt.CookieHttpOnly = true;
+            });
             ////添加接口文档自动生成第三方键
             services.AddSwaggerGen(c =>
             {
@@ -141,7 +145,6 @@ namespace Workflow.Core.Config
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
                 var xmlPath = Path.Combine(basePath, "ApiDoc.xml");
                 c.IncludeXmlComments(xmlPath);
-
                 c.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
             });
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();

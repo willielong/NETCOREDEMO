@@ -26,7 +26,7 @@ namespace Workflow.Core.Controllers
     public class CompanyController : BaseController
     {
         private ICompanyService _service;
-        public CompanyController(ICompanyService service)
+        public CompanyController(ICompanyService service, IHttpContextAccessor httpContextAccessor) : base(_httpContextAccessor: httpContextAccessor)
         {
             ServiceLocator.Ip = "127.0.0.1";
             ServiceLocator.currentUser = "Author";

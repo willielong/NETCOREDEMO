@@ -11,7 +11,7 @@ namespace Workflow.Core.Controllers
     [Route("api/v{version:apiVersion}/[controller]"),Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiVersion("3.0")]
-    public class LogInController : BaseController
+    public class LogInController : Controller
     {
         [HttpPost]
         public IActionResult Post([FromBody]UserModel user)

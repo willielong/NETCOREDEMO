@@ -10,6 +10,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Workflow.Core.Config;
 using Workflow.Core.Filter;
+using Microsoft.AspNetCore.Http;
 
 namespace Workflow.Core.Controllers
 {
@@ -21,11 +22,11 @@ namespace Workflow.Core.Controllers
     //[UserInfoFilter]
     public class ValuesController : BaseController
     {
-        public ValuesController([FromServices]IMapper mapper)
+        public ValuesController([FromServices]IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(_httpContextAccessor: httpContextAccessor)
         {
 
         }
-        
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()

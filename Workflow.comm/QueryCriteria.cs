@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Workflow.Entity;
 
 namespace Workflow.comm
 {
@@ -48,6 +49,11 @@ namespace Workflow.comm
         /// 查询数据的主键
         /// </summary>
         public object prKey { get; set; }
+
+        /// <summary>
+        /// 当前登陆人
+        /// </summary>
+        public IUser currentUser { get; set; }
 
     }
 }

@@ -7,3 +7,6 @@ E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.AssemblyInfo.
 E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.dll
 E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.pdb
 E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.csprojAssemblyReference.cache
+E:\项目\core\Workflow.comm\bin\Debug\netcoreapp2.0\Workflow.Entity.dll
+E:\项目\core\Workflow.comm\bin\Debug\netcoreapp2.0\Workflow.Entity.pdb
+E:\项目\core\Workflow.comm\obj\Debug\netcoreapp2.0\Workflow.comm.csproj.CopyComplete

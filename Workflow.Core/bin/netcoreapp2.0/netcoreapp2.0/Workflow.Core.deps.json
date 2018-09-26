@@ -5277,6 +5277,7 @@
           "Microsoft.AspNetCore.All": "2.0.6",
           "Microsoft.AspNetCore.Session": "2.1.1",
           "ServiceStack.Text": "5.1.0",
+          "Workflow.Entity": "1.0.0",
           "log4net": "2.0.8"
         },
         "runtime": {

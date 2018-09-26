@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,7 @@ namespace WorkFlow.AutoMapper
         public CompanyProfile()
         {
             ///进行单位映射
-            CreateMap<Company, Dto_Company>().BeforeMap((data, dto) => {
-               
+            CreateMap<Company, Dto_Company>().BeforeMap((data, dto) => {              
                 dto.dis_c_head = data.c_head;
             })
             .ForMember(o => o.dis_head, mo => mo.NullSubstitute(""));

@@ -32,8 +32,8 @@ namespace Workflow.Business.Imp.Company
         private WriteBehavior writeBehavior;
         private ReadBehavior readBehavior;
         private IWriteRepository<Company> _writeRepository;
-
-        public CompanyBusiness(IWriteRepository<Company> writeRepository, IReadRepository<Company> readRepository)
+        private IHttpContextAccessor httpContextAccessor;
+        public CompanyBusiness(IWriteRepository<Company> writeRepository, IReadRepository<Company> readRepository, IHttpContextAccessor _httpContextAccessor)
         {
             ///进行具体方法实现-写入数据
             if (writeBehavior == null)
@@ -45,6 +45,10 @@ namespace Workflow.Business.Imp.Company
             if (readBehavior == null)
             {
                 readBehavior = new ReadBehavior(readRepository);
+            }
+            if (httpContextAccessor == null)
+            {
+                httpContextAccessor = _httpContextAccessor;
             }
         }
         public CompanyBusiness()
@@ -190,7 +194,7 @@ namespace Workflow.Business.Imp.Company
 
                 var data = readBehavior.Page<Company>(new QueryCriteria() { name = "龙", page = 0, size = 10 });
                 ///打开事务              
-
+                httpContextAccessor.GetUserSession();
                 var da = readBehavior.own().Result;
                 var ss = readBehavior.All().Result;
                 Company company = readBehavior.Single("01").Result;

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -53,7 +54,9 @@ namespace Workflow.Core.Filter
                 if (result?.Principal != null)
                 {
                     ServiceLocator.currentUser = result.Principal.Identity.Name;
-                    httpContext.User = result.Principal;
+                    httpContext.User = result.Principal;                    
+                    httpContext.Session.SetString("4A40B671-51EA-47B3-80CC-DD2426FB8DC2", result.Principal.Identity.Name);
+                    
                     ////权限中是否存在请求的url
                     //if (Requirement.Permissions.GroupBy(g => g.Url).Where(w => w.Key.ToLower() == questUrl).Count() > 0)
                     //{

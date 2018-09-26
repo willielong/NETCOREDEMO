@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WorkFlow.Business.Company;
 using Workflow.comm;
 using Workflow.Dto.sys;
+using Microsoft.AspNetCore.Http;
 
 namespace Workflow.ServiceImp
 {
@@ -18,13 +19,16 @@ namespace Workflow.ServiceImp
     {
         private readonly ICompanyBusiness business;
         private readonly IMapper mapper;
-        public CompayServie(ICompanyBusiness _business, IMapper _mapper)
+        private IHttpContextAccessor httpContextAccessor;
+        public CompayServie(ICompanyBusiness _business, IMapper _mapper, IHttpContextAccessor _httpContextAccessor)
         {
             if (business == null)
             {
                 business = _business;
             }
-            if (null == mapper) mapper = _mapper;
+            if (null == mapper) { mapper = _mapper; }
+            if (null == httpContextAccessor)
+            { httpContextAccessor = _httpContextAccessor; }
         }
         /// <summary>
         /// 获取多个数据
@@ -50,6 +54,7 @@ namespace Workflow.ServiceImp
         {
             Error("错误信息01", "Single");
             Dto_Company co;
+            var ss = httpContextAccessor.HttpContext.Session.GetString("user");
             business.Single().ToDto(out co, mapper);
             return co.ToResponse();
         }
