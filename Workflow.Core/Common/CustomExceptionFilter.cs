@@ -17,6 +17,7 @@ using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -55,6 +56,11 @@ namespace Workflow.Core.Common
                     msg.code = "1001";
                     msg.message = "数据库异常";
                 }
+                 if (context.Exception is SqlException)
+                {
+                    msg.code = "1002";
+                    msg.message = "数据库异常";
+                }
                 else if (context.Exception is ArgumentException)
                 {
                     msg.code = "5001";
@@ -74,15 +80,16 @@ namespace Workflow.Core.Common
 
                 // LogHelper.ErrorLogRecord("4", context.Exception.GetType().Name, context.Exception).ConfigureAwait(false);
             }
-            JsonResult result = new JsonResult(msg)
+            JsonResult result = new JsonResult(msg.message)
             {
-                StatusCode = int.Parse(msg.code)
+                StatusCode = int.Parse(msg.code),
             };
 
             //var response = new HttpResponseMessage();
             //response.Content = new StringContent(JsonSerializer.SerializeToString(msg), Encoding.GetEncoding("utf-8"), "text/html");
             //result.Value = response;
             context.Result = result;
+
             base.OnException(context);
             //return response;
         }

@@ -198,21 +198,21 @@ namespace Workflow.Business.Imp.Company
                 var da = readBehavior.own().Result;
                 var ss = readBehavior.All().Result;
                 Company company = readBehavior.Single("01").Result;
-                if (company != null)
-                {
+                //if (company != null)
+                //{
                     _writeRepository.BeginTransaction();
                     company.c_head = "lijian";
 
                     writeBehavior.Update(company);
                     ///进行事务提交并写入数据
                     _writeRepository.CommitTransaction();
-                }
+                //}
                 return company;
             }
             catch (Exception)
             {
                 _writeRepository.RollbackTransaction();
-                throw;
+                throw ;
             }
 
         }
