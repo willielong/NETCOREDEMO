@@ -17,7 +17,7 @@ namespace Workflow.ServiceImp
 {
     public class CompayServie : LogBase<CompayServie>, ICompanyService
     {
-        private readonly ICompanyBusiness business;
+        public ICompanyBusiness business { get; set; }
         private readonly IMapper mapper;
         private IHttpContextAccessor httpContextAccessor;
         public CompayServie(ICompanyBusiness _business, IMapper _mapper, IHttpContextAccessor _httpContextAccessor)

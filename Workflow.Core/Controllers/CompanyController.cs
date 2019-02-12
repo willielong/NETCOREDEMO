@@ -25,12 +25,12 @@ namespace Workflow.Core.Controllers
     [ApiVersion("3.0")]
     public class CompanyController : BaseController
     {
-        private ICompanyService _service;
-        public CompanyController(ICompanyService service, IHttpContextAccessor httpContextAccessor) : base(_httpContextAccessor: httpContextAccessor)
+        public ICompanyService _service { get; set; }
+        public CompanyController( IHttpContextAccessor httpContextAccessor) : base(_httpContextAccessor: httpContextAccessor)
         {
             ServiceLocator.Ip = "127.0.0.1";
             ServiceLocator.currentUser = "Author";
-            _service = service;
+            
         }
         /// <summary>
         /// 进行数据加载的接口

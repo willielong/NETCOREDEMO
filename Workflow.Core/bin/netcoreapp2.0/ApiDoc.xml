@@ -4,6 +4,30 @@
         <name>Workflow.Core</name>
     </assembly>
     <members>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.AddApiVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置api的版本
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置Swagger
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.AddJWTAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置JWT授权
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.AddDBContext(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            添加数据库链接全局服务
+            </summary>
+            <param name="services"></param>
+        </member>
         <member name="M:Workflow.Core.Config.AutoFacConfig.GetAssmenBlys">
             <summary>
             返回需要依赖注入的接口
@@ -26,6 +50,19 @@
             获取生成Token的配置
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.RegisterAutoFacController(Autofac.ContainerBuilder,Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            进行控制器依赖注入
+            </summary>
+            <param name="builder"></param>
+            <param name="services"></param>
+        </member>
+        <member name="M:Workflow.Core.Config.AutoFacConfig.RegisterSpecial(Autofac.ContainerBuilder)">
+            <summary>
+            特殊注入
+            </summary>
+            <param name="builder"></param>
         </member>
         <member name="T:Workflow.Core.Controllers.CompanyController">
             <summary>

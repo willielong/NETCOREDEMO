@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\项目\\core\\Workflow.Entity\\Workflow.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj",
       "projectName": "Workflow.Entity",
-      "projectPath": "E:\\项目\\core\\Workflow.Entity\\Workflow.Entity.csproj",
+      "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj",
       "packagesPath": "C:\\Users\\wenlli\\.nuget\\packages\\",
-      "outputPath": "E:\\项目\\core\\Workflow.Entity\\obj\\",
+      "outputPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

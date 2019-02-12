@@ -10655,7 +10655,7 @@
       ]
     },
     "System.Memory/4.5.1": {
-      "sha512": "vcG3/MbfpxznMkkkaAblJi7RHOmuP7kawQMhDgLSuA1tRpRQYsFSCTxRSINDUgn2QNn2jWeLxv8er5BXbyACkw==",
+      "sha512": "oonnLQPZAGD21qtNMG4EtVmbYOInk2jV7M+g108B6OHOb67ZOaWnA/K8P5oQ6uK9wxKzB1iEXSChQOi2scKOqA==",
       "type": "package",
       "path": "system.memory/4.5.1",
       "files": [
@@ -13841,11 +13841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\项目\\core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
+      "projectUniqueName": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
       "projectName": "WorkFlow.AutoMapper",
-      "projectPath": "E:\\项目\\core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
+      "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
       "packagesPath": "C:\\Users\\wenlli\\.nuget\\packages\\",
-      "outputPath": "E:\\项目\\core\\WorkFlow.AutoMapper\\obj\\",
+      "outputPath": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.AutoMapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13864,26 +13864,26 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\项目\\core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj": {
-              "projectPath": "E:\\项目\\core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj"
             },
-            "E:\\项目\\core\\WorkFlow.Business\\WorkFlow.Business.csproj": {
-              "projectPath": "E:\\项目\\core\\WorkFlow.Business\\WorkFlow.Business.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.Business\\WorkFlow.Business.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.Business\\WorkFlow.Business.csproj"
             },
-            "E:\\项目\\core\\Workflow.Dto\\Workflow.Dto.csproj": {
-              "projectPath": "E:\\项目\\core\\Workflow.Dto\\Workflow.Dto.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Dto\\Workflow.Dto.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Dto\\Workflow.Dto.csproj"
             },
-            "E:\\项目\\core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj": {
-              "projectPath": "E:\\项目\\core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj"
             },
-            "E:\\项目\\core\\Workflow.Entity\\Workflow.Entity.csproj": {
-              "projectPath": "E:\\项目\\core\\Workflow.Entity\\Workflow.Entity.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj"
             },
-            "E:\\项目\\core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj": {
-              "projectPath": "E:\\项目\\core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj"
             },
-            "E:\\项目\\core\\Workflow.Repository\\Workflow.Repository.csproj": {
-              "projectPath": "E:\\项目\\core\\Workflow.Repository\\Workflow.Repository.csproj"
+            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository\\Workflow.Repository.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository\\Workflow.Repository.csproj"
             }
           }
         }

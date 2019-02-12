@@ -37,7 +37,8 @@ namespace Workflow.Core.Filter
                     Name = "Authorization",  //添加Authorization头部参数
                     In = "header",
                     Type = "string",
-                    Required = false
+                    Required = true,
+                    Description="Bearer "
                 });
             }
         }
