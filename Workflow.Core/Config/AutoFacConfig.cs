@@ -119,7 +119,6 @@ namespace Workflow.Core.Config
 
             ///进行控制器属性注入
             RegisterAutoFacController(builder, services);
-
             IContainer ApplicationContainer = builder.Build();
             IServiceProvider serviceProvider = new AutofacServiceProvider(ApplicationContainer);
 
@@ -257,9 +256,6 @@ namespace Workflow.Core.Config
             Assemblys assembly = new Assemblys();
             string path = Directory.GetCurrentDirectory() + "\\Config\\Assemblys.xml";
             assembly = con.ReadConfFile<Assemblys>(path, false);
-            //assembly.childs.Add("12312312");
-            //assembly.childs.Add("123");
-            //con.WriteConfFile(assembly, path, false, false);
             List<Assembly> assemblys = new List<Assembly>();
             if (assembly.childs.Count > 0)
             {
@@ -375,7 +371,7 @@ namespace Workflow.Core.Config
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>))//单个注入
 .InstancePerDependency().PropertiesAutowired();///属性注入
             builder.RegisterGeneric(typeof(WriteRepository<>)).As(typeof(IWriteRepository<>))//单个注入
-    .InstancePerDependency().PropertiesAutowired();///属性注入
+    .InstancePerDependency().PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies).SingleInstance();///属性注入
             builder.RegisterGeneric(typeof(ReadRepository<>)).As(typeof(IReadRepository<>))//单个注入
 .InstancePerDependency().PropertiesAutowired();///属性注入
         }

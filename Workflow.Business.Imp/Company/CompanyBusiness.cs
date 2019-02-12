@@ -31,8 +31,9 @@ namespace Workflow.Business.Imp.Company
         #region 进行函数构造
         private WriteBehavior writeBehavior;
         private ReadBehavior readBehavior;
-        private IWriteRepository<Company> _writeRepository;
+        public IWriteRepository<Company> _writeRepository { get; set; }
         private IHttpContextAccessor httpContextAccessor;
+        public IUnitOfWork unitOfWork { get; set; }
         public CompanyBusiness(IWriteRepository<Company> writeRepository, IReadRepository<Company> readRepository, IHttpContextAccessor _httpContextAccessor)
         {
             ///进行具体方法实现-写入数据
