@@ -10,5 +10,8 @@ namespace WorkFolw.Service
     {
         List<Dto_Company> Get();
         IResponseMessage Single();
+
+        object own();
+        List<Dto_Company> All();
     }
 }

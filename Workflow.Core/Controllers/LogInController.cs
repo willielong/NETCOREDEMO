@@ -29,9 +29,18 @@ namespace Workflow.Core.Controllers
 
         }
     }
+    /// <summary>
+    /// 用户登录实体
+    /// </summary>
     public class UserModel
     {
+        /// <summary>
+        /// 用户名
+        /// </summary>
         public string userName { get; set; }
+        /// <summary>
+        /// 密码
+        /// </summary>
         public string pwd { get; set; }
     }
 }

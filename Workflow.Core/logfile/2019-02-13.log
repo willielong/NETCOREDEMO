@@ -1,0 +1,7 @@
+日志时间: 2019-02-13 15:21:25,077;线程ID:[22];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-02-13 15:30:44,921;线程ID:[6];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;
+日志时间: 2019-02-13 15:55:27,816;线程ID:[27];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-02-13 16:07:52,532;线程ID:[6];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-02-13 16:12:53,864;线程ID:[18];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-02-13 16:16:59,017;线程ID:[6];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-02-13 16:33:33,458;线程ID:[20];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;

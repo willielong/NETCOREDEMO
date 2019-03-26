@@ -36,9 +36,9 @@ namespace Workflow.Core.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return "value".ToJsonResult();
         }
 
         // POST api/values
@@ -54,9 +54,27 @@ namespace Workflow.Core.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id}/{query}")]
+        public IActionResult Delete(int id,string query)
         {
+            return true.ToJsonResult();
+        }
+
+        // <summary>
+        /// 进行单个数据加载
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet, Route("single")]
+        public IActionResult Single()
+        {
+            var ip = httpContextAccessor.HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+                         if (string.IsNullOrEmpty(ip))
+                             {
+                                 ip = httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+                             }
+                         return ip.ToJsonResult();
+            //LogBase<CompanyController>.Error("错误信息Single", "Single");
+           // return "123123".ToJsonResult();
         }
     }
 }

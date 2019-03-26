@@ -53,5 +53,24 @@ namespace Workflow.Core.Controllers
             //LogBase<CompanyController>.Error("错误信息Single", "Single");
             return _service.Single().ToJsonResult();
         }
+        /// <summary>
+        /// 只获部门不获取单位
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet, Route("own")]
+        public IActionResult Own()
+        {
+            return _service.own().ToJsonResult();
+        }
+
+        /// <summary>
+        /// 获取当前所有数据
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet,Route("all/{id}")]
+        public IActionResult  All()
+        {
+            return _service.All().ToJsonResult();
+        }
     }
 }

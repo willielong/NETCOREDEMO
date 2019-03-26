@@ -81,6 +81,34 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Workflow.Core.Controllers.CompanyController.Own">
+            <summary>
+            只获部门不获取单位
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Workflow.Core.Controllers.CompanyController.All">
+            <summary>
+            获取当前所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Workflow.Core.Controllers.UserModel">
+            <summary>
+            用户登录实体
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Controllers.UserModel.userName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Workflow.Core.Controllers.UserModel.pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <!-- 对于成员“M:Workflow.Core.Controllers.ValuesController.Single”忽略有格式错误的 XML 注释 -->
         <member name="P:Workflow.Core.Filter.CustomAuthorize.Schemes">
             <summary>
             验证方案提供对象

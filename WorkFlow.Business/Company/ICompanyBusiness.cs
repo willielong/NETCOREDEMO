@@ -96,6 +96,9 @@ namespace WorkFlow.Business.Company
         /// <param name="criteria"></param>
         /// <returns></returns>
         List<Company> GetTreeUnit(object criteria);
+        List<Company> All();
+
+        object own();
 
         #endregion
     }

@@ -37,9 +37,8 @@ namespace Workflow.ServiceImp
         public List<Dto_Company> Get()
         {
             Error("错误信息01", "Get");
-            List<Company> co = new List<Company>();
-            co.Add(new Company() { ognName = "0001", ognId = "01", c_head = "111", head = "123", parentId = "0" });
-            co.Add(new Company() { ognName = "0002", ognId = "02", c_head = "111", head = "123", parentId = "0" });
+            List<Company> co = business.All();
+         
             List<Dto_Company> dtos;
             co.ToDtos(out dtos, mapper);
             return dtos;
@@ -52,11 +51,33 @@ namespace Workflow.ServiceImp
         /// <returns></returns>
         public IResponseMessage Single()
         {
+            
             Error("错误信息01", "Single");
             Dto_Company co;
             var ss = httpContextAccessor.HttpContext.Session.GetString("user");
             business.Single().ToDto(out co, mapper);
             return co.ToResponse();
+        }
+
+        /// <summary>
+        /// 获取所有的公司信息
+        /// </summary>
+        /// <returns></returns>
+        public List<Dto_Company>All()
+        {
+            List<Company> co = business.All();
+            List<Dto_Company> dtos;
+            co.ToDtos(out dtos, mapper);
+            return dtos;
+        }
+
+        /// <summary>
+        /// 获取当前公司所有数据
+        /// </summary>
+        /// <returns></returns>
+        public object own()
+        {
+            return business.own();
         }
     }
 }

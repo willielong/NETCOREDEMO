@@ -38,7 +38,7 @@ namespace Workflow.Core.Filter
                     In = "header",
                     Type = "string",
                     Required = true,
-                    Description="Bearer "
+                    Description="Bearer"
                 });
             }
         }

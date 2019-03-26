@@ -13841,11 +13841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
+      "projectUniqueName": "C:\\Users\\wenlli\\Source\\Repos\\Core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
       "projectName": "WorkFlow.AutoMapper",
-      "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
+      "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\WorkFlow.AutoMapper\\WorkFlow.AutoMapper.csproj",
       "packagesPath": "C:\\Users\\wenlli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.AutoMapper\\obj\\",
+      "outputPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\WorkFlow.AutoMapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13864,26 +13864,26 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Business.Imp\\Workflow.Business.Imp.csproj"
             },
-            "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.Business\\WorkFlow.Business.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\WorkFlow.Business\\WorkFlow.Business.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\WorkFlow.Business\\WorkFlow.Business.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\WorkFlow.Business\\WorkFlow.Business.csproj"
             },
-            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Dto\\Workflow.Dto.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Dto\\Workflow.Dto.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Dto\\Workflow.Dto.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Dto\\Workflow.Dto.csproj"
             },
-            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Entity.Imp\\Workflow.Entity.Imp.csproj"
             },
-            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Entity\\Workflow.Entity.csproj"
             },
-            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Repository.Imp\\Workflow.Repository.Imp.csproj"
             },
-            "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository\\Workflow.Repository.csproj": {
-              "projectPath": "C:\\Users\\wenlli\\source\\repos\\Core\\Workflow.Repository\\Workflow.Repository.csproj"
+            "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Repository\\Workflow.Repository.csproj": {
+              "projectPath": "C:\\Users\\wenlli\\Source\\Repos\\Core\\Workflow.Repository\\Workflow.Repository.csproj"
             }
           }
         }
