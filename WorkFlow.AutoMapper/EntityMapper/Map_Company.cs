@@ -17,12 +17,12 @@ namespace WorkFlow.AutoMapper.EntityMapper
         public static void ToDto(this Company buModel, out Dto_Company data, IMapper mapper)
         {
             //new CommProfile();
-            data = mapper.Map<Dto_Company>(buModel);
+            data = ServiceLocator.staticMapper.Map<Dto_Company>(buModel);
         }
 
         public static void ToDtos(this List<Company> buModel, out List<Dto_Company> dtos, IMapper mapper)
         {
-            dtos = mapper.Map<List<Company>, List<Dto_Company>>(buModel);
+            dtos = ServiceLocator.staticMapper.Map<List<Company>, List<Dto_Company>>(buModel);
         }
     }
 }

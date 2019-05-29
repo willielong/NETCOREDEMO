@@ -93,6 +93,25 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Workflow.Core.Controllers.HSSFDataValidationExtension.SetHSSFDataValidation(NPOI.SS.UserModel.IWorkbook,System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="workbook">excel表格</param>
+            <param name="rangeName">数据源名称</param>
+            <param name="SheetName">表格名称</param>
+            <param name="startRow"></param>
+            <param name="startCell"></param>
+            <param name="sheetCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Workflow.Core.Controllers.HSSFDataValidationExtension.setExcelColumnName(System.Text.StringBuilder,System.Int32)">
+            <summary>
+            按照索引获取excel对应的列名
+            </summary>
+            <param name="str"></param>
+            <param name="col"></param>
+        </member>
         <member name="T:Workflow.Core.Controllers.UserModel">
             <summary>
             用户登录实体

@@ -1,0 +1,5 @@
+日志时间: 2019-04-18 17:21:51,335;线程ID:[23];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-04-18 17:23:06,280;线程ID:[26];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-04-18 17:25:06,885;线程ID:[23];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-04-18 17:56:07,050;线程ID:[18];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Single;错误信息:错误信息01;
+日志时间: 2019-04-18 17:57:04,544;线程ID:[22];日志级别:ERROR;日志信息所在类:Workflow.ServiceImp.CompayServie;当前客户端Ip地址:[127.0.0.1];当前用户:[Author];出现错误的方法:Get;错误信息:错误信息01;
