@@ -66,8 +66,7 @@ namespace Workflow.Repository.Imp
         /// </summary>
         public virtual void EndTransaction()
         {
-
-
+            writeDbContext.Database.CurrentTransaction.Dispose();
         }
 
         /// <summary>

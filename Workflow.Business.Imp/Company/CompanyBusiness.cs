@@ -15,7 +15,7 @@ using System.Text;
 using Workflow.Entity.Imp.DataBase;
 using Workflow.Repository;
 using WorkFlow.Business.Company;
-
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Workflow.Business.Imp.Company
 {
@@ -29,28 +29,24 @@ namespace Workflow.Business.Imp.Company
     public class CompanyBusiness : ICompanyBusiness
     {
         #region 进行函数构造
+        private IWriteRepository<Company> _writeRepository;
+        private readonly IReadRepository<Company> _readRepository;
+        private IHttpContextAccessor httpContextAccessor;
         private WriteBehavior writeBehavior;
         private ReadBehavior readBehavior;
-        public IWriteRepository<Company> _writeRepository { get; set; }
-        private IHttpContextAccessor httpContextAccessor;
-        public IUnitOfWork unitOfWork { get; set; }
-        public CompanyBusiness(IWriteRepository<Company> writeRepository, IReadRepository<Company> readRepository, IHttpContextAccessor _httpContextAccessor)
+        public CompanyBusiness(IServiceProvider _serviceProvider)
         {
             ///进行具体方法实现-写入数据
-            if (writeBehavior == null)
-            {
-                _writeRepository = writeRepository;
-                writeBehavior = new WriteBehavior(writeRepository);
-            }
-            ///进行具体方法实现-读取
-            if (readBehavior == null)
-            {
-                readBehavior = new ReadBehavior(readRepository);
-            }
-            if (httpContextAccessor == null)
-            {
-                httpContextAccessor = _httpContextAccessor;
-            }
+            if (null == _writeRepository)
+                _writeRepository = _serviceProvider.GetService<IWriteRepository<Company>>();
+            if (null == _readRepository)
+                _readRepository = _serviceProvider.GetService<IReadRepository<Company>>();
+            if (null == httpContextAccessor)
+                httpContextAccessor = _serviceProvider.GetService<IHttpContextAccessor>();
+            if (null == writeBehavior)
+                writeBehavior = new WriteBehavior(_writeRepository);
+            if (null == readBehavior)
+                readBehavior = new ReadBehavior(_readRepository);
         }
         public CompanyBusiness()
         {
@@ -213,7 +209,7 @@ namespace Workflow.Business.Imp.Company
             catch (Exception)
             {
                 _writeRepository.RollbackTransaction();
-                throw ;
+                throw;
             }
 
         }

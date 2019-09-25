@@ -17,18 +17,23 @@ namespace Workflow.ServiceImp
 {
     public class CompayServie : LogBase<CompayServie>, ICompanyService
     {
-        public ICompanyBusiness business { get; set; }
         private readonly IMapper mapper;
         private IHttpContextAccessor httpContextAccessor;
-        public CompayServie(ICompanyBusiness _business, IMapper _mapper, IHttpContextAccessor _httpContextAccessor)
+        private ICompanyBusiness business;
+        public CompayServie(IServiceProvider _serviceProvider)
         {
             if (business == null)
             {
-                business = _business;
+                business = _serviceProvider.GetService<ICompanyBusiness>();
             }
-            if (null == mapper) { mapper = _mapper; }
+            if (null == mapper)
+            {
+                mapper = _serviceProvider.GetService<IMapper>();
+            }
             if (null == httpContextAccessor)
-            { httpContextAccessor = _httpContextAccessor; }
+            {
+                httpContextAccessor = _serviceProvider.GetService<IHttpContextAccessor>();
+            }
         }
         /// <summary>
         /// 获取多个数据
@@ -38,7 +43,7 @@ namespace Workflow.ServiceImp
         {
             Error("错误信息01", "Get");
             List<Company> co = business.All();
-         
+
             List<Dto_Company> dtos;
             co.ToDtos(out dtos, mapper);
             return dtos;
@@ -51,7 +56,7 @@ namespace Workflow.ServiceImp
         /// <returns></returns>
         public IResponseMessage Single()
         {
-            
+
             Error("错误信息01", "Single");
             Dto_Company co;
             var ss = httpContextAccessor.HttpContext.Session.GetString("user");
@@ -63,7 +68,7 @@ namespace Workflow.ServiceImp
         /// 获取所有的公司信息
         /// </summary>
         /// <returns></returns>
-        public List<Dto_Company>All()
+        public List<Dto_Company> All()
         {
             List<Company> co = business.All();
             List<Dto_Company> dtos;

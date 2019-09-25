@@ -23,14 +23,16 @@ namespace Workflow.Core.Controllers
     [Authorize("CustomAuthorize"), CustomActionFilter, Route("api/v{version:apiVersion}/[controller]"), Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiVersion("3.0")]
-    public class CompanyController : BaseController
+    public class CompanyController : Controller
     {
-        public ICompanyService _service { get; set; }
-        public CompanyController( IHttpContextAccessor httpContextAccessor) : base(_httpContextAccessor: httpContextAccessor)
+        public ICompanyService _service;
+        private IHttpContextAccessor httpContextAccessor;
+        public CompanyController(IServiceProvider _serviceProvider)
         {
             ServiceLocator.Ip = "127.0.0.1";
             ServiceLocator.currentUser = "Author";
-            
+            _service = _serviceProvider.GetService<ICompanyService>();
+            httpContextAccessor = _serviceProvider.GetService<IHttpContextAccessor>();
         }
         /// <summary>
         /// 进行数据加载的接口
@@ -67,8 +69,8 @@ namespace Workflow.Core.Controllers
         /// 获取当前所有数据
         /// </summary>
         /// <returns></returns>
-        [HttpGet,Route("all/{id}")]
-        public IActionResult  All()
+        [HttpGet, Route("all/{id}")]
+        public IActionResult All()
         {
             return _service.All().ToJsonResult();
         }

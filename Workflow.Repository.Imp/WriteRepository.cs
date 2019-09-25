@@ -14,6 +14,10 @@ namespace Workflow.Repository.Imp
         /// 数据集
         /// </summary>
         public virtual DbSet<Tentity> DbSets { get; set; }
+        /// <summary>
+        /// 链接DBContext
+        /// </summary>
+        private DbContext _dbContext { get; set; }
 
         /// <summary>
         /// 进行参数构造
@@ -21,6 +25,7 @@ namespace Workflow.Repository.Imp
         /// <param name="_writeDbContext"></param>
         public WriteRepository(WriteDbContext _DbContext) : base(_DbContext)
         {
+            _dbContext = _DbContext;
             DbSets = _dbContext.Set<Tentity>();
         }
 

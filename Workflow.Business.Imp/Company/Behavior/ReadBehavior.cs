@@ -122,7 +122,6 @@ namespace Workflow.Business.Imp.Company.Behavior
         public override async Task<List<Company>> All()
         {
             return await repository.All().Include("Departments").ToListAsync();
-            // return await repository.T_SQL("SELECT * FROM dbo.Company").Include("Departments").ToListAsync();
         }
 
         #endregion

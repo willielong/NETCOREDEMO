@@ -368,8 +368,6 @@ namespace Workflow.Core.Config
         /// <param name="builder"></param>
         public static void RegisterSpecial(ContainerBuilder builder)
         {
-            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>))//单个注入
-.InstancePerDependency().PropertiesAutowired();///属性注入
             builder.RegisterGeneric(typeof(WriteRepository<>)).As(typeof(IWriteRepository<>))//单个注入
     .InstancePerDependency().PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies).SingleInstance();///属性注入
             builder.RegisterGeneric(typeof(ReadRepository<>)).As(typeof(IReadRepository<>))//单个注入

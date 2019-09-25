@@ -29,7 +29,7 @@ namespace Workflow.Repository.Imp
         /// <summary>
         /// 链接DBContext
         /// </summary>
-        protected DbContext _dbContext { get; set; }
+        private DbContext _dbContext { get; set; }
 
 
         /// <summary>
@@ -98,7 +98,6 @@ namespace Workflow.Repository.Imp
         /// <param name="model"></param>
         public virtual void Edit<TOther>(TOther model) where TOther : class
         {
-
             _dbContext.Set<TOther>().Attach(model);
             _dbContext.Entry(model).State = EntityState.Modified;
         }
